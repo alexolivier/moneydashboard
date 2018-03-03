@@ -17,7 +17,7 @@ moneydashboard -e me@me.com -p myawesomepassword tags
 
 ```
 const MoneyDashboard = require('moneydashboard')
-await MoneyDashboard.login(program.email, program.password)
+await MoneyDashboard.login('me@me.com', 'myawesomepassword')
 console.log(await MoneyDashboard.accounts())
 console.log(await MoneyDashboard.transactions(10))
 console.log(await MoneyDashboard.tags())
