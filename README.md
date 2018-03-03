@@ -24,8 +24,9 @@ If this is set, then email and password don't need to be passed via the command 
 
 ```
 const MoneyDashboard = require('moneydashboard')
-await MoneyDashboard.login('me@me.com', 'myawesomepassword')
-console.log(await MoneyDashboard.accounts())
-console.log(await MoneyDashboard.transactions(10))
-console.log(await MoneyDashboard.tags())
+const mdb = new MoneyDashboard()
+await mdb.init('me@me.com', 'myawesomepassword')
+console.log(await mdb.getAccounts())
+console.log(await mdb.getTransactions())
+console.log(await mdb.getTags())
 ```

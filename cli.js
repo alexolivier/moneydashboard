@@ -7,6 +7,8 @@ const accounting = require('accounting')
 const colors = require('colors')
 const cfg = require('home-config')
 
+const mdb = new MoneyDashboard()
+
 program
   .version('0.1.0')
   .option('-e, --email <email>', 'Money Dashboard Email')
@@ -19,11 +21,11 @@ program
   .command('accounts')
   .action(async (cmd) => {
     try {
-      await MoneyDashboard.login(
+      await mdb.init(
         accountConfig.email ? accountConfig.email : program.email,
         accountConfig.password ? accountConfig.password : program.password
       )
-      const accounts = await MoneyDashboard.accounts()
+      const accounts = await mdb.getAccounts()
       if (program.output === 'json') {
         console.log(accounts)
       } else {
@@ -50,6 +52,7 @@ program
         console.error({error: 'Sorry an error occured. Are your account details correct?'})
       } else {
         console.error('Sorry an error occured. Are your account details correct?')
+        console.error(e)
       }
     }
   })
@@ -58,11 +61,11 @@ program
   .command('transactions [count]')
   .action(async (count) => {
     try {
-      await MoneyDashboard.login(
+      await mdb.init(
         accountConfig.email ? accountConfig.email : program.email,
         accountConfig.password ? accountConfig.password : program.password
       )
-      const transactions = await MoneyDashboard.transactions(count)
+      const transactions = await mdb.getTransactions(count)
       if (program.output === 'json') {
         console.log(transactions)
       } else {
@@ -92,11 +95,11 @@ program
 program
   .command('tags')
   .action(async (cmd) => {
-    await MoneyDashboard.login(
+    await mdb.init(
       accountConfig.email ? accountConfig.email : program.email,
       accountConfig.password ? accountConfig.password : program.password
     )
-    console.log(await MoneyDashboard.tags())
+    console.log(await mdb.getTags())
   })
 
 program.parse(process.argv)
