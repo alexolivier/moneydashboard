@@ -21,7 +21,7 @@ program
       console.log(accounts)
     } else {
       const table = new Table({
-        head: ['Source', 'Name', 'Balance', 'Last Refreshed']
+        head: [colors.cyan('Source'), colors.cyan('Name'), colors.cyan('Balance'), colors.cyan('Last Refreshed')]
       })
       let total = 0
       accounts.map(account => {
@@ -35,7 +35,7 @@ program
         ])
       })
       const color = total >= 0 ? 'green' : 'red'
-      table.push([colors.red('TOTAL'), colors[color](accounting.formatMoney(total, '£ ', 0)), ''])
+      table.push(['', colors.cyan('TOTAL'), colors[color](accounting.formatMoney(total, '£ ', 0)), ''])
       console.log(table.toString())
     }
   })
