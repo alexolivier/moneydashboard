@@ -70,7 +70,7 @@ program
         console.log(transactions)
       } else {
         const table = new Table({
-          head: ['Date', 'Name', 'Amount', 'Account']
+          head: [colors.cyan('Date'), colors.cyan('Name'), colors.cyan('Amount'), colors.cyan('Account')]
         })
         transactions.map(transaction => {
           const color = transaction.Amount >= 0 ? 'green' : 'red'
