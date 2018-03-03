@@ -13,6 +13,13 @@ moneydashboard -e me@me.com -p myawesomepassword transactions [count]
 moneydashboard -e me@me.com -p myawesomepassword tags
 ```
 
+You can also set up a config file in `$HOME/.moneydashboard` containing your credentials:
+```
+email = me@me.com
+password = myawesomepassword
+```
+If this is set, then email and password don't need to be passed via the command line flags.
+
 ### Node
 
 ```

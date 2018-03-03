@@ -5,6 +5,7 @@ const Table = require('cli-table')
 const moment = require('moment')
 const accounting = require('accounting')
 const colors = require('colors')
+const cfg = require('home-config')
 
 program
   .version('0.1.0')
@@ -12,11 +13,16 @@ program
   .option('-p, --password <password>', 'Money Dashboard Password')
   .option('-o, --output [type]', 'Output format [type]', 'table')
 
+const accountConfig = cfg.load('.moneydashboard')
+
 program
   .command('accounts')
   .action(async (cmd) => {
     try {
-      await MoneyDashboard.login(program.email, program.password)
+      await MoneyDashboard.login(
+        accountConfig.email ? accountConfig.email : program.email,
+        accountConfig.password ? accountConfig.password : program.password
+      )
       const accounts = await MoneyDashboard.accounts()
       if (program.output === 'json') {
         console.log(accounts)
@@ -52,7 +58,10 @@ program
   .command('transactions [count]')
   .action(async (count) => {
     try {
-      await MoneyDashboard.login(program.email, program.password)
+      await MoneyDashboard.login(
+        accountConfig.email ? accountConfig.email : program.email,
+        accountConfig.password ? accountConfig.password : program.password
+      )
       const transactions = await MoneyDashboard.transactions(count)
       if (program.output === 'json') {
         console.log(transactions)
@@ -83,7 +92,10 @@ program
 program
   .command('tags')
   .action(async (cmd) => {
-    await MoneyDashboard.login(program.email, program.password)
+    await MoneyDashboard.login(
+      accountConfig.email ? accountConfig.email : program.email,
+      accountConfig.password ? accountConfig.password : program.password
+    )
     console.log(await MoneyDashboard.tags())
   })
 

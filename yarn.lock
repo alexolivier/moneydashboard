@@ -163,6 +163,12 @@ has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
 
+home-config@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/home-config/-/home-config-0.1.0.tgz#1bce40cdeeb4fab819cdf6e686dd02f486a90147"
+  dependencies:
+    ini "~1.2.1"
+
 htmlparser2@^3.9.1:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
@@ -177,6 +183,10 @@ htmlparser2@^3.9.1:
 inherits@^2.0.1, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
+
+ini@~1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.2.1.tgz#7f774e2f22752cd1dacbf9c63323df2a164ebca3"
 
 is-buffer@^1.1.5:
   version "1.1.6"

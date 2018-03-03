@@ -20,6 +20,7 @@
     "cli-table": "^0.3.1",
     "colors": "^1.1.2",
     "commander": "^2.14.1",
+    "home-config": "^0.1.0",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
     "tough-cookie": "^2.3.4"
