@@ -34,7 +34,11 @@ program
         })
         let total = 0
         accounts.map(account => {
-          total += account.Balance
+          if (account.IncludeInCalculations) {
+            total += account.Balance
+          } else {
+            account.Name += ' (Excluded from total)'
+          }
           const color = account.Balance >= 0 ? 'green' : 'red'
           table.push([
             account.Institution.Name,
