@@ -12,7 +12,7 @@ node cli.js -e me@me.com -p myawesomepassword tags
 
 ### Node
 ```
-const MoneyDashboard = require('MoneyDashboard')
+const MoneyDashboard = require('moneydashboard')
 await MoneyDashboard.login(program.email, program.password)
 console.log(await MoneyDashboard.accounts())
 console.log(await MoneyDashboard.transactions())
