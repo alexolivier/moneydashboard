@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+.DS_Store
+log/*
+tmp
+config/local*
+config/local.yml
+config/auth
+.next
+logs/*
+yarn-error.log

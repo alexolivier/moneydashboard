@@ -1,0 +1,20 @@
+{
+  "name": "moneydashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@3846masa/axios-cookiejar-support": "^0.3.4",
+    "axios": "^0.18.0",
+    "chalk": "^2.3.2",
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.14.1",
+    "lodash": "^4.17.5",
+    "tough-cookie": "^2.3.4"
+  }
+}
